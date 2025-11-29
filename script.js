@@ -49,4 +49,4 @@ const createPopUp = function (event) {
 };
 
 document.querySelector("body").addEventListener("click", createPopUp, false);
-console.log("coucou");
+
