@@ -33,13 +33,17 @@ body{
 }
 
 button{
-    background-color: red;
+    background-color: gray;
     color: white;
     font: bold;
     position: absolute;
     padding: 5% 10%;
     right: 0%;
     top: 0%;
+}
+
+button:active{
+    background-color: red;
 }
 
 #popup{
