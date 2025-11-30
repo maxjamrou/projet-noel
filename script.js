@@ -8,7 +8,7 @@ function wait(time) {
 
 async function animation() {
   let time = Math.floor((Math.random()+1)*3)*500;
-  const presents = document.getElementsByClassName("present");
+  const presents = document.getElementsByClassName("closed");
   let present = presents[Math.floor(Math.random()*4)];
   await wait(time);
   present.classList.add("animation");
@@ -20,8 +20,19 @@ async function animation() {
 setInterval(animation, 1000);
 
 function customPopUp(name){
-  return `<div id = "popup">
-    ${name}'s password :
+  return `
+  <div id = "popup">
+    <div id = "popup_header">
+      <button id = "return">
+        X
+      </button>
+    </div>
+    <div id = "popup_content">
+      <h1> Merry christmas ${name}</h1>
+      ${name}'s password :
+      <input type = "password" placeholder="password"/>
+      <input type = "submit" value = "submit"/>
+    </div>
   </div>`;
 }
 
@@ -40,7 +51,7 @@ const createPopUp = function (event) {
       popup_screen.innerHTML = customPopUp(present.dataset.value);
       document.body.insertBefore(popup_screen, document.querySelector("#grille"));
     }   
-  } else if(targetElement.closest(".present") == null && targetElement.closest("#popup") == null){
+  } else if(targetElement.closest(".present") == null && targetElement.closest("#popup") == null || targetElement.closest("#return")){
     if(document.querySelector("#popup_screen")){
       let popup_screen = document.querySelector("#popup_screen");
       popup_screen.remove();
