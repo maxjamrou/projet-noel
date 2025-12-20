@@ -70,11 +70,13 @@ const putSomeMusic = function(event){
       musique.className = "bavard";
       son.innerHTML = "🔉";
       audio.muted = false;
+      audio.play();
     }
     else if (musique.className == "bavard"){
       musique.className = "muet";
       son.innerHTML = "🔇";
       audio.muted = true;
+      audio.pause();
     }
   }
 }
