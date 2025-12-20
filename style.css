@@ -7,6 +7,19 @@ body{
     background-color: beige;
 }
 
+#musique{
+    position: absolute;
+    inline-size: min-content;
+    font-size: xx-large;
+    cursor: pointer;
+}
+
+#musique > div {
+    position: absolute;
+    inline-size: min-content;
+    font-size: xx-large;
+}
+
 #grille {
     height: 100vh;
     width: 100vw;

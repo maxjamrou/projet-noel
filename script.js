@@ -61,3 +61,22 @@ const createPopUp = function (event) {
 
 document.querySelector("body").addEventListener("click", createPopUp, false);
 
+const putSomeMusic = function(event){
+  if (event.target.closest("#musique")){
+    let musique = event.target.closest("#musique");
+    let son = document.querySelector("#musique > div");
+    let audio = document.querySelector("audio");
+    if (musique.className == "muet"){
+      musique.className = "bavard";
+      son.innerHTML = "🔉";
+      audio.muted = false;
+    }
+    else if (musique.className == "bavard"){
+      musique.className = "muet";
+      son.innerHTML = "🔇";
+      audio.muted = true;
+    }
+  }
+}
+
+document.querySelector("body").addEventListener("click", putSomeMusic, false);
