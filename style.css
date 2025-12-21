@@ -5,25 +5,31 @@
 
 body{
     background-color: beige;
+    margin-top: auto;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 
 #musique{
     position: absolute;
     inline-size: min-content;
-    font-size: xx-large;
+    font-size: xxx-large;
     cursor: pointer;
 }
 
 #musique > div {
     position: absolute;
     inline-size: min-content;
-    font-size: xx-large;
+    font-size: xxx-large;
 }
 
 #grille {
-    height: 100vh;
-    width: 100vw;
     display: grid;
+    justify-content: center;
+    align-content: center;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
@@ -120,35 +126,35 @@ img{
     }
     
     10%{
-        transform: translateY(-15vh);
+        transform: translateY(-45%);
     }
 
     40%{
-        transform: translateY(-10vh) rotate(20deg);
+        transform: translateY(-30%) rotate(20deg);
     }
 
     50%{
-        transform: translateY(-10vh) rotate(0deg);
+        transform: translateY(-30%) rotate(0deg);
     }
 
     60%{
-        transform: translateY(-10vh) rotate(-20deg);
+        transform: translateY(-30%) rotate(-20deg);
     }
 
     70%{
-        transform: translateY(-10vh) rotate(0deg);
+        transform: translateY(-30%) rotate(0deg);
     }
 
     80%{
-        transform: translateY(-5vh) rotate(20deg);
+        transform: translateY(-20%) rotate(20deg);
     }
 
     90%{
-        transform: translateY(0vh) rotate(0deg);
+        transform: translateY(-10%) rotate(0deg);
     }
 
     100%{
-        transform: translateY(0);
+        transform: translateY(0%);
     }
 }
 
