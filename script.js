@@ -1,3 +1,50 @@
+const cadeaux = [
+  {
+    name : "Krater",
+    cad_cur : "Krater_cadeau.png",
+    couleur : "green",
+    password : "Krater2024!",
+    kdo: [
+      "https://mundosteam.shop/wp-content/uploads/2024/02/Diseno-sin-titulo-53.png", 
+      "https://assetsio.gnwcdn.com/Chai-in-Hi-Fi-Rush.png?width=1200&height=1200&fit=crop&quality=100&format=png&enable=upscale&auto=webp"
+    ],
+    wordinmiddle : ""
+  },
+    {
+    name : "Ella",
+    cad_cur : "Ella_cadeau.png",
+    couleur : "brown",
+    password : "Ella2024!",
+    kdo: [
+      "https://preview.redd.it/elite-skins-v0-acfqvgygv3wd1.jpeg?auto=webp&s=84463b97022ad0e57b3b7f8ed2a6ae606c72f586", 
+      "https://m.media-amazon.com/images/I/71oXniR1hHL.jpg"
+    ],
+    wordinmiddle : "from"
+  },
+    {
+    name : "Anouk",
+    cad_cur : "Anouk_cadeau.png",
+    couleur : "blue",
+    password : "Anouk2024!",
+    kdo: [
+      "https://deadbydaylight.com/static/9c3d45b3980f8bb46db59e4dc2db9974/e1e52/dbd_chap16_silenthill_keyart_71022f961b.jpg", 
+      "https://assets.deadbydaylight.com/dbd_chap2_halloween_keyart_c3c79d313b.jpg"
+    ],
+    wordinmiddle : "+"
+  },
+    {
+    name : "Alex",
+    cad_cur : "Alex_cadeau.png",
+    couleur : "purple",
+    password : "Alex2024!",
+    kdo: [
+      "https://preview.redd.it/elite-skins-v0-acfqvgygv3wd1.jpeg?auto=webp&s=84463b97022ad0e57b3b7f8ed2a6ae606c72f586", 
+      "https://assets.nintendo.eu/image/upload/f_auto,c_limit,w_992,q_auto:low/MNS/NOE/70010000000963/SQ_NSwitch_Minecraft"
+    ],
+    wordinmiddle : "OR"
+  },
+];
+
 function wait(time) {
     return new Promise((resolve) => {
     setTimeout(() => {

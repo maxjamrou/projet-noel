@@ -4,13 +4,21 @@
 }
 
 body{
-    background-color: beige;
+    background-color: rgb(230, 230, 193);
     margin-top: auto;
     width: 100vw;
     height: 100vh;
     display: grid;
     justify-content: center;
     align-content: center;
+}
+
+#snow{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
 }
 
 #musique{
