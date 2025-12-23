@@ -99,11 +99,14 @@ button:active{
 
 #popup_content{
     grid-area: content;
+    width: 100%;
     display: grid;
-
-    justify-content: center;
+    grid-template-rows: repeat(4, 1fr);
 }
 
+#password, #submit, #text{
+    grid-row: span 1;
+}
 
 .present, #sapin{
     display: flex;
