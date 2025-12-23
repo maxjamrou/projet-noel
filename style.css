@@ -18,7 +18,6 @@ body{
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    pointer-events: none;
 }
 
 #musique{
@@ -51,38 +50,60 @@ body{
 
 #popup_header{
     width: 100%;
-    position: absolute;
-    width: 100%;
-    top : 0%;
-    left: 0%;
-    background-color: rgb(174, 159, 189);
-    display: flex;
+    grid-area: header;
+    display:grid;
+    grid-template-columns: 4fr 1fr;
 }
 
 button{
-    background-color: gray;
-    color: white;
+    height: 100%;
+    width: 100%;
+    color: gray;
+    background-color:transparent;
+    border: none;
     font: bold;
-    position: absolute;
-    padding: 5% 10%;
-    right: 0%;
-    top: 0%;
+    cursor: pointer;
+    grid-column: 2/3;
+}
+
+button:hover{
+    background-color: lightgray;
+    border-radius: 0 25px 0 25px;
 }
 
 button:active{
     background-color: red;
+    border-radius: 0 25px 0 25px;
 }
 
 #popup{
-    padding: 30vh 35vw;
+    width: 50vw;
+    height: 50vh;
     border: 1px solid;
+    border-radius: 25px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: beige;
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    ". . ."
+    ". content ."
+    ". content ."
+    ". . . "
+    ". . .";
     z-index: 1;
 }
+
+#popup_content{
+    grid-area: content;
+    display: grid;
+
+    justify-content: center;
+}
+
 
 .present, #sapin{
     display: flex;

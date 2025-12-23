@@ -17,7 +17,7 @@ const cadeaux = [
     password : "Ella2024!",
     kdo: [
       "https://preview.redd.it/elite-skins-v0-acfqvgygv3wd1.jpeg?auto=webp&s=84463b97022ad0e57b3b7f8ed2a6ae606c72f586", 
-      "https://m.media-amazon.com/images/I/71oXniR1hHL.jpg"
+      "https://www.goclecd.fr/wp-content/uploads/SteamGiftCard20EUR.jpg"
     ],
     wordinmiddle : "from"
   },
@@ -75,10 +75,10 @@ function customPopUp(name){
       </button>
     </div>
     <div id = "popup_content">
-      <h1> Merry christmas ${name}</h1>
+      <h1 id="text"> Merry christmas ${name}</h1>
       ${name}'s password :
-      <input type = "password" placeholder="password"/>
-      <input type = "submit" value = "submit"/>
+      <input type = "password" placeholder="password" id = "password"/>
+      <input type = "submit" value = "submit" id = "submit"/>
     </div>
   </div>`;
 }
