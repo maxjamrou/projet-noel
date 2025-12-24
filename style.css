@@ -110,11 +110,9 @@ button:active{
     "header header header header header"
     ". . . . ."
     "text2 text2 text2 text2 p"
-    ". . . . ."
     ". container container container ."
     ". container container container ."
-    ". container container container ."
-    ". . . . .";
+    ". container container container .";
 }
 
 #text2{
@@ -135,7 +133,7 @@ button:active{
     "cadeau1 . . cadeau2"
     "lgd1 . . lgd2";
     justify-content: space-around;
-    align-content: center;
+    align-content: start;
 }
 
 #cadeau_container_column{
@@ -146,7 +144,8 @@ button:active{
     ". wordinmiddle ."
     ". cadeau2 lgd2";
     justify-content: center;
-    align-content: space-around;
+    align-content: start;
+    justify-items: center;
 }
 
 #lgd1{
