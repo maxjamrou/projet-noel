@@ -41,6 +41,10 @@ body{
     grid-template-rows: repeat(3, 1fr);
 }
 
+#popup_screen ~ #grille > .present{
+    z-index: -1;
+}
+
 #popup_screen{
     position: absolute;
     height: 100vh;
@@ -53,6 +57,7 @@ body{
     grid-area: header;
     display:grid;
     grid-template-columns: 4fr 1fr;
+    border-bottom: 1px solid gray;
 }
 
 button{
@@ -68,17 +73,17 @@ button{
 
 button:hover{
     background-color: lightgray;
-    border-radius: 0 25px 0 25px;
+    border-radius: 0 25px 0 0;
 }
 
 button:active{
     background-color: red;
-    border-radius: 0 25px 0 25px;
+    border-radius: 0 25px 0 0;
 }
 
-#popup{
-    width: 50vw;
-    height: 50vh;
+#popup, #popup2 {
+    width: 70vw;
+    height: 60vh;
     border: 1px solid;
     border-radius: 25px;
     position: absolute;
@@ -87,6 +92,10 @@ button:active{
     transform: translate(-50%, -50%);
     background-color: beige;
     display: grid;
+    z-index: 1;
+}
+
+#popup{
     grid-template-areas: 
     "header header header"
     ". . ."
@@ -94,18 +103,97 @@ button:active{
     ". content ."
     ". . . "
     ". . .";
-    z-index: 1;
+}
+
+#popup2{
+    grid-template-areas: 
+    "header header header header header"
+    ". . . . ."
+    "text2 text2 text2 text2 p"
+    ". . . . ."
+    ". container container container ."
+    ". container container container ."
+    ". container container container ."
+    ". . . . .";
+}
+
+#text2{
+    grid-area: text2;
+    text-align: center;
+}
+
+#whatyougot{
+    grid-area: p;
+}
+
+#cadeau_container{
+    grid-area: container;
+    display: grid;
+    grid-template-areas:
+    "cadeau1 . . cadeau2"
+    "cadeau1 wordinmiddle . cadeau2"
+    "cadeau1 . . cadeau2"
+    "lgd1 . . lgd2";
+    justify-content: space-around;
+    align-content: center;
+}
+
+#cadeau_container_column{
+    grid-area: container;
+    display: grid;
+    grid-template-areas:
+    ". cadeau1 lgd1"
+    ". wordinmiddle ."
+    ". cadeau2 lgd2";
+    justify-content: center;
+    align-content: space-around;
+}
+
+#lgd1{
+    grid-area: lgd1;
+    text-align: center;
+}
+
+#lgd2{
+    grid-area: lgd2;
+    text-align: center;
+}
+
+#cadeau_un, #cadeau_deux{
+    width: 75%;
+    height: 75%;
+}
+
+#word_in_middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#cadeau_un{
+    grid-area: cadeau1;
+
+}
+
+#cadeau_deux{
+    grid-area: cadeau2;
+}
+
+#word_in_middle{
+    grid-area: wordinmiddle;
 }
 
 #popup_content{
     grid-area: content;
     width: 100%;
+    height: 100%;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
 }
 
-#password, #submit, #text{
-    grid-row: span 1;
+#submit{
+    cursor: pointer;
 }
 
 .present, #sapin{
