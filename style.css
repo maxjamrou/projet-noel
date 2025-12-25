@@ -125,6 +125,8 @@ button:active{
 }
 
 #cadeau_container{
+    width: 100%;
+    height: 100%;
     grid-area: container;
     display: grid;
     grid-template-areas:
@@ -137,6 +139,8 @@ button:active{
 }
 
 #cadeau_container_column{
+    width: 100%;
+    height: 100%;
     grid-area: container;
     display: grid;
     grid-template-areas:
@@ -238,6 +242,11 @@ img{
 .animation {
     animation: jump-shaked 0.8s;
 }
+
+.unrevealed1, .unrevealed2{
+    filter : brightness(0);
+}
+
 
 @keyframes jump-shaked {
     0%{

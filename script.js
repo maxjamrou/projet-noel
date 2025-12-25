@@ -2,7 +2,7 @@ const cadeaux = {
   "Krater" : {
     cad_cur : "Krater_cadeau.png",
     couleur : "green",
-    password : "Krater2024!",
+    password : "nkrua",
     kdo: [
       "https://mundosteam.shop/wp-content/uploads/2024/02/Diseno-sin-titulo-53.png", 
       "https://assetsio.gnwcdn.com/Chai-in-Hi-Fi-Rush.png?width=1200&height=1200&fit=crop&quality=100&format=png&enable=upscale&auto=webp"
@@ -13,18 +13,18 @@ const cadeaux = {
     "Ella" : {
     cad_cur : "Ella_cadeau.png",
     couleur : "orange",
-    password : "Ella2024!",
+    password : "o znotq a gxk bkxe iazk hzc :]",
     kdo: [
       "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/2EDQyFzWp1XhmZ7tvSlDIW/2f35348a2691c1cc21cb869bb6a23380/r6-bundle-elite-bandit-ncsa-thumb-960x540_349434.jpg", 
-      "https://www.goclecd.fr/wp-content/uploads/SteamGiftCard20EUR.jpg"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_hmoWF3WiwWTqtiaxaiNWlfXu1lyCDOuKIg&s"
     ],
-    alt : ["One elite skin", "20€ Steam gift card"],
-    wordinmiddle : "from"
+    alt : ["One elite skin", "a cute gingerbread for you ella :)"],
+    wordinmiddle : ""
   },
     "Anouk" : {
     cad_cur : "Anouk_cadeau.png",
     couleur : "dark_red",
-    password : "Anouk2024!",
+    password : "o muz znk cuxj :)",
     kdo: [
       "https://deadbydaylight.com/static/9c3d45b3980f8bb46db59e4dc2db9974/e1e52/dbd_chap16_silenthill_keyart_71022f961b.jpg", 
       "https://assets.deadbydaylight.com/dbd_chap2_halloween_keyart_c3c79d313b.jpg"
@@ -35,7 +35,7 @@ const cadeaux = {
     "Alex" : {
     cad_cur : "Alex_cadeau.png",
     couleur : "blue_sky",
-    password : "Alex2024!",
+    password : "Cyn",
     kdo: [
       "https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/7ICTRITCPph7Y66qVW0uTQ/07623eba75db6ff4f4754a81b31cf555/R6-operator-ela-elite.png", 
       "https://assets.nintendo.eu/image/upload/f_auto,c_limit,w_992,q_auto:low/MNS/NOE/70010000000963/SQ_NSwitch_Minecraft"
@@ -75,7 +75,7 @@ function customPopUp(name){
       </button>
     </div>
     <div id = "popup_content">
-      <h1 id="text"> Merry christmas ${name}</h1>
+      <h1 id="text"> Merry christmas ${name}!</h1>
       ${name}'s password :
       <input type = "password" placeholder="password" id = "password"/>
       <input type = "submit" value = "submit" id = "submit"/>
@@ -100,7 +100,7 @@ const createPopUp = function (event) {
       popup_screen.innerHTML = customPopUp(present.dataset.value);
       document.body.insertBefore(popup_screen, document.querySelector("#grille"));
     }   
-  } else if(targetElement.closest(".present") == null && targetElement.closest("#popup") == null || targetElement.closest("button")){
+  } else if(targetElement.closest(".present") == null && targetElement.closest("#popup") == null && targetElement.closest("#popup2") == null || targetElement.closest("button")){
     if(document.querySelector("#popup_screen")){
       let popup_screen = document.querySelector("#popup_screen");
       popup_screen.remove();
@@ -137,7 +137,7 @@ const checkPassword = function(event){
     let password = document.querySelector("#password");
     let popup_screen = document.querySelector("#popup_screen");
     let name = present.dataset.value;
-    if(password.value === cadeaux[name].password){
+    if(password.value.toUpperCase() === cipherRot20(cadeaux[name].password)){
       popup_screen.innerHTML = `
       <div id = "popup2">
         <div id = "popup_header">
@@ -146,18 +146,16 @@ const checkPassword = function(event){
           </button>
         </div>
         <h2 id="text2"> Here you go, merry christmas ${name}!</h2>
-
         <div id = "cadeau_container">
           <div id="cadeau_un">
-            <img src="${cadeaux[name].kdo[0]}" alt="${cadeaux[name].alt[0]}" id="cadeau_image"/>
-            <p id = "lgd1">${cadeaux[name].alt[0]}</p>
+            <img src="${cadeaux[name].kdo[0]}" alt="${cadeaux[name].alt[0]}" id="cadeau_image" class="unrevealed1"/>
+            <p id = "lgd1" class="unrevealed1"></p>
           </div>
           <div id="word_in_middle">
-            ${cadeaux[name].wordinmiddle}
           </div>
           <div id="cadeau_deux">
-            <img src="${cadeaux[name].kdo[1]}" alt="${cadeaux[name].alt[1]}" id="cadeau_image"/>
-            <p id = "lgd2">${cadeaux[name].alt[1]}</p>
+            <img src="${cadeaux[name].kdo[1]}" alt="${cadeaux[name].alt[1]}" id="cadeau_image" class="unrevealed2"/>
+            <p id = "lgd2" class="unrevealed2"></p>
           </div>
         </div>
       </div>`;
@@ -187,3 +185,48 @@ function changesize(){
 }
 
 window.onresize = changesize;
+
+function revealGifts(event){
+  if(event.target.closest(".unrevealed1")){
+    document.querySelector(".unrevealed1").classList.remove("unrevealed1");
+    document.querySelector(".unrevealed1").classList.remove("unrevealed1");
+    document.querySelector("#lgd1").innerHTML = cadeaux[present.dataset.value].alt[0];
+    if(document.querySelector(".unrevealed1") == null && document.querySelector(".unrevealed2") == null){
+      document.querySelector("#word_in_middle").innerHTML = cadeaux[present.dataset.value].wordinmiddle;
+    }
+  }
+  if(event.target.closest(".unrevealed2")){
+    document.querySelector(".unrevealed2").classList.remove("unrevealed2");
+    document.querySelector(".unrevealed2").classList.remove("unrevealed2");
+    document.querySelector("#lgd2").innerHTML = cadeaux[present.dataset.value].alt[1];
+    if(document.querySelector(".unrevealed1") == null && document.querySelector(".unrevealed2") == null){
+      document.querySelector("#word_in_middle").innerHTML = cadeaux[present.dataset.value].wordinmiddle;
+    }
+  }
+}
+
+document.querySelector("body").addEventListener("click", revealGifts, false);
+
+function cipherRot20(str) {
+  str = str.toUpperCase();
+  return str.replace(/[A-Z]/g, rot20);
+
+  function rot20(correspondance) {
+    const charCode = correspondance.charCodeAt();
+    //A = 65, Z = 90
+    return String.fromCharCode(
+            ((charCode + 20) <= 90) ? charCode + 20
+                                    : (charCode + 20) % 90 + 64
+           );
+    
+  }
+}
+
+function togglePasswordVisibility(event) {
+  if (event.target.closest("#password")) {
+    const password = document.querySelector("#password");
+    password.type = password.type === "password" ? "text" : "password";
+  }
+}
+
+document.querySelector("body").addEventListener("click", togglePasswordVisibility, false);
